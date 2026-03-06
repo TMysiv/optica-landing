@@ -85,6 +85,7 @@ export const Tariffs = () => {
         className="tariff-section flex justify-between relative mx-auto my-[46px] mb-[152px] max-w-[1170px] w-full"
         component="section"
         aria-label="Тарифи інтернету Укртелеком"
+        id="tarrif-section"
       >
 
         <span aria-hidden="true" className="absolute pointer-events-none z-1 ellipse-4"></span>

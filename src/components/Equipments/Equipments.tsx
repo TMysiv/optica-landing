@@ -76,6 +76,7 @@ export const Equipments = () => {
         component="section"
         aria-label="Обладнання для інтернету — Wi-Fi роутер TP-Link Mercusys"
         className="equipment-section max-w-[936px] mx-auto relative"
+        id="equipment-section"
       >
 
         <span aria-hidden="true" className="ellipse ellipse-6"></span>

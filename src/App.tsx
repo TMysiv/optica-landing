@@ -7,6 +7,7 @@ import { Form } from './components/Form/Form';
 import { Footer } from './components/Footer/Footer';
 import { Helmet } from 'react-helmet-async';
 import { config } from './config';
+import { Reviews } from './components/Reviews/Reviews';
 
 const SITE_URL = config.domain;
 
@@ -86,7 +87,9 @@ function App() {
       </Helmet>
 
       <Box className="overflow-hidden">
+
         <Banner/>
+
         <Tariffs/>
         <h2 className="equipment-h text-white text-center text-[48px] font-semibold leading-[89%] mb-[49px]">
           Обладнання для оптичного
@@ -94,12 +97,19 @@ function App() {
             інтернету GPON
           </strong>
         </h2>
+
         <Equipments/>
+
+        <Reviews />
+
         <h2 className="form-t max-w-[440px] text-white text-center text-[40px] font-bold leading-[117.5%] mt-[133px] mb-[51px] mx-auto uppercase">
           Підключіть інтернет зараз
         </h2>
+
         <Form/>
+
         <Footer/>
+
       </Box>
     </>
   );

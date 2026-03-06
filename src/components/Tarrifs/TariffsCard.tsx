@@ -54,9 +54,13 @@ export const TariffsCard = ({ id, img, name, price, description, extraPrice, mod
       <Box className="tariff-description max-w-[313px] min-h-[209px]">
         {description.map((desc, index) => (
           <Box key={index}>
-            {desc.includes('до 96 годин') ? desc.split('до 96 годин').map((d, idx) => (
-              <span key={idx}>{d}{idx === 0 && <br />}до 96 годин</span>
-            )) : desc}
+            {desc.includes('до 96 годин') ? (
+              <>
+                {desc.replace('до 96 годин', '')}
+                <br />
+                до 96 годин
+              </>
+            ) : desc}
           </Box>
         ))}
         {extraPrice && (

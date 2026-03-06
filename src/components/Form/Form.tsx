@@ -570,7 +570,7 @@ export const Form = () => {
           <CustomButton
             text="ПІДКЛЮЧИТИСЬ"
             width={247}
-            className="bg-yellow-850 hover:bg-cyan-500 hover:text-white text-xl mt-5"
+            className="bg-cyan-500 text-white hover:bg-yellow-850 hover:text-black text-xl mt-5"
             iconClassName="group-hover:text-yellow-850"
             handleClick={handleSaveOffer}
           />
