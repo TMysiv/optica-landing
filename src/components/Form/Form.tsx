@@ -23,11 +23,11 @@ import data from '../../addreska.json';
 
 const formSchema = {
   "@context": "https://schema.org",
-  "@type": "ContactPoint",
-  "contactType": "sales",
+  "@type": "Service",
+  "name": "Підключення інтернету GPON",
+  "provider": { "@type": "Organization", "name": "Укртелеком" },
   "areaServed": "UA",
-  "availableLanguage": "Ukrainian",
-  "description": "Заявка на підключення інтернету GPON від Укртелеком по всій Україні"
+  "availableLanguage": "Ukrainian"
 };
 
 const initialOffer: Offer = {
@@ -100,7 +100,7 @@ export const Form = () => {
       <Box className="flex flex-col items-center gap-5 mt-5 ">
         <h2 className="text-5xl font-extrabold text-cyan-500 text-center letter-spacing">Ваша заявка прийнята!</h2>
         <p className="text-white text-xl text-center letter-spacing">Наш менеджер зателефонує в найближчий час</p>
-        <img src="/images/logo.svg" alt="logo"/>
+        <img src="/images/logo.svg" alt="Укртелеком — оптичний інтернет провайдер"/>
       </Box>
     )
   }
@@ -560,7 +560,10 @@ export const Form = () => {
               />
             </Grid>
           </Grid>
-          <p className="agree-text max-w-[536px] mt-[18px] mb-[25px] text-[#D7D7D7] text-[11px] font-[350]">
+          <p
+            role="note"
+            className="agree-text max-w-[536px] mt-[18px] mb-[25px] text-[#D7D7D7] text-[11px] font-[350]"
+          >
             Відправляючи Заявку, Ви даєте згоду АТ «Укртелеком» на обробку Ваших персональних даних відповідно до
             умов Закону України «Про захист персональних даних» **
           </p>
@@ -577,6 +580,8 @@ export const Form = () => {
               alt="Wi-Fi роутер TP-Link Mercusys EasyMesh для GPON інтернету"
               className="w-45 h-70 absolute -right-7 -bottom-12"
               loading="lazy"
+              width="180"
+              height="282"
             />
           )}
           {openModal && (
@@ -587,7 +592,7 @@ export const Form = () => {
               width={{ xs: "80%", md: "40%" }}
             />
           )}
-          <i className="ellipse ellipse-8"></i>
+          <span aria-hidden="true" className="ellipse ellipse-8"></span>
         </Box>
       </Box>
     </>

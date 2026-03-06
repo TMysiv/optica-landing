@@ -3,13 +3,14 @@ import { CustomButton } from '../Custom/CustomButton';
 import { useState } from 'react';
 import { CustomModal } from '../Custom/CustomModal';
 import { Router } from '../../descriptions/Router';
+import { config } from '../../config';
 
 const routerSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Гігабітний Wi-Fi роутер TP-Link Mercusys EasyMesh дводіапазонний",
   "description": "Гігабітний Wi-Fi роутер із підтримкою EasyMesh забезпечує стабільне покриття у всій квартирі чи будинку. Протестований фахівцями Укртелеком на мережі GPON.",
-  "image": "https://твійсайт.ua/images/mesh-router.png",
+  "image": `${config.domain}/images/mesh-router.png`,
   "brand": {
     "@type": "Brand",
     "name": "TP-Link Mercusys"
@@ -77,8 +78,8 @@ export const Equipments = () => {
         className="equipment-section max-w-[936px] mx-auto relative"
       >
 
-        <i className="ellipse ellipse-6"></i>
-        <i className="ellipse ellipse-7"></i>
+        <span aria-hidden="true" className="ellipse ellipse-6"></span>
+        <span aria-hidden="true" className="ellipse ellipse-7"></span>
 
         <article
           aria-label="Wi-Fi роутер TP-Link Mercusys EasyMesh"
@@ -110,8 +111,8 @@ export const Equipments = () => {
 
           <Box
             className="equipment-price-second flex justify-between text-white text-[16px] font-normal leading-normal pb-[14px] max-w-[270px] mx-auto">
-            <div>2 шт - <strong className="font-bold">1 699 грн</strong></div>
-            <div>3 шт - <strong className="font-bold">2 599 грн</strong></div>
+            <span>2 шт - <strong className="font-bold">1 699 грн</strong></span>
+            <span>3 шт - <strong className="font-bold">2 599 грн</strong></span>
           </Box>
 
           <CustomButton
@@ -136,6 +137,8 @@ export const Equipments = () => {
           alt="Оптичне обладнання GPON для підключення інтернету Укртелеком"
           src="/images/equipment.webp"
           loading="lazy"
+          width="1064"
+          height="548"
         />
 
         <Box

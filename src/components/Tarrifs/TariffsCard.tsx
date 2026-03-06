@@ -44,7 +44,7 @@ export const TariffsCard = ({ id, img, name, price, description, extraPrice, mod
          shadow-[0_0_31.1px_13px_rgba(0,179,220,0.11)_inset_0_0_0_1px_#00B3DC] tariff-item"
     >
       <Box className="tariff-type">
-        <img src={img} alt={imgAlt} className="block h-full w-auto" loading="lazy"/>
+        <img src={img} alt={imgAlt} className="block h-full w-auto" loading="lazy" width="120" height="60"/>
       </Box>
 
       <h3 className="tariff-name text-white text-[38px] font-bold not-italic leading-[0.89] m-0 py-[20px] pb-[27px] h-[125px]">

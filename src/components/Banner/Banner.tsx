@@ -24,7 +24,7 @@ export const Banner = () => {
     },
     {
       src: '/images/adv-2.svg',
-      text: <>Ціна відома<br/><strong>до 96 годин</strong></>,
+      text: <>Ціна відома<br/><strong>на 2 роки</strong></>,
       alt: 'Фіксована ціна на інтернет',
     },
     {
@@ -53,17 +53,19 @@ export const Banner = () => {
           style={bannerImg.style}
           loading="eager"
           fetchPriority="high"
+          width="1920"
+          height="790"
         />
 
         {['ellipse-1','ellipse-2','ellipse-3'].map((el, i) => (
-          <i key={i} className={`absolute pointer-events-none z-1 ${el}`}></i>
+          <span aria-hidden="true" key={i} className={`absolute pointer-events-none z-1 ${el}`}></span>
         ))}
 
         <Box className="max-w-[1170px] mx-auto relative z-20 banner-section">
           <Header />
           <h1 className="text-[#00B3DC] font-semibold not-italic text-[74px] leading-[0.89] pt-[81px] max-w-[441px] mb-[26px]">
-            Новий стандарт
-            <span className="text-white block">швидкості Укртелеком</span>
+            Підключити оптичний інтернет
+            <span className="text-white block">GPON від Укртелеком</span>
           </h1>
           <CustomButton
             text='ПІДКЛЮЧИТИ'

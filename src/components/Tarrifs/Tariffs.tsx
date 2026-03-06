@@ -4,6 +4,7 @@ import { ReactElement } from 'react';
 import { MarketingFTTx } from '../../descriptions/MarketingFTTx';
 import { OptimaDualOffer } from '../../descriptions/OptimaDualOffer';
 import { MaxDualOffer } from '../../descriptions/MaxDualOffer';
+import { config } from '../../config';
 
 interface Tariff {
   id: number;
@@ -56,7 +57,7 @@ export const Tariffs = () => {
         "@type": "Product",
         "name": `Інтернет ${tariff.name} — Укртелеком GPON`,
         "description": tariff.description.join('. '),
-        "image": `https://твійсайт.ua${tariff.img}`,
+        "image": `${config.domain}${tariff.img}`,
         "offers": {
           "@type": "Offer",
           "price": tariff.price,
@@ -86,8 +87,8 @@ export const Tariffs = () => {
         aria-label="Тарифи інтернету Укртелеком"
       >
 
-        <i className="absolute pointer-events-none z-1 ellipse-4"></i>
-        <i className="absolute pointer-events-none z-1 ellipse-5"></i>
+        <span aria-hidden="true" className="absolute pointer-events-none z-1 ellipse-4"></span>
+        <span aria-hidden="true" className="absolute pointer-events-none z-1 ellipse-5"></span>
 
         {tariffs.map( ( tariff ) => (
           <TariffsCard

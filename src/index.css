@@ -255,7 +255,7 @@ body {
 }
 
 .css-sb1he2-MuiFormLabel-root-MuiInputLabel-root.Mui-disabled {
-   color: grey;
+   color: grey !important;
 }
 
 .ellipse-8 {
