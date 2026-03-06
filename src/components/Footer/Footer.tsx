@@ -222,10 +222,10 @@ export const Footer = () => {
             © {new Date().getFullYear()} АТ «Укртелеком». Всі права захищені.
           </span>
           <Box className="flex gap-[20px]">
-            <a href="#" className="text-white/30 hover:text-white/60 text-[12px] no-underline transition-colors">
+            <a href="http://google.com" className="text-white/30 hover:text-white/60 text-[12px] no-underline transition-colors">
               Публічна оферта
             </a>
-            <a href="#" className="text-white/30 hover:text-white/60 text-[12px] no-underline transition-colors">
+            <a href="http://google.com" className="text-white/30 hover:text-white/60 text-[12px] no-underline transition-colors">
               Політика конфіденційності
             </a>
           </Box>
