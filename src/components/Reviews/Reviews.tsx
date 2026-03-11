@@ -1,54 +1,6 @@
 import { Box, useMediaQuery, useTheme } from '@mui/material';
-
-const stats = [
-  { value: '25+', label: 'років на ринку', icon: '🏆' },
-  { value: '1M+', label: 'клієнтів в Україні', icon: '👥' },
-  { value: '96год', label: 'енергонезалежність', icon: '⚡' },
-  { value: '1', label: 'Гбіт/с швидкість', icon: '🚀' },
-];
-
-const reviews = [
-  {
-    id: 1,
-    name: 'Олена Коваленко',
-    city: 'Київ',
-    rating: 5,
-    text: 'Підключились два місяці тому. Швидкість стабільна, під час відключення світла інтернет працював — це просто рятівник для роботи вдома.',
-    date: 'Лютий 2025',
-    avatar: 'О',
-  },
-  {
-    id: 2,
-    name: 'Максим Сидоренко',
-    city: 'Харків',
-    rating: 5,
-    text: 'Перейшов з іншого провайдера. Різниця відчутна — 1 Гбіт реально 1 Гбіт, не "до 1 Гбіт". Майстер приїхав швидко, все налаштував.',
-    date: 'Січень 2025',
-    avatar: 'М',
-  },
-  {
-    id: 3,
-    name: 'Тетяна Мельник',
-    city: 'Львів',
-    rating: 5,
-    text: 'Взяли тариф з MEGOGO — дуже вигідно. Дітям є що дивитись, якість відео відмінна. Ціна на 2 роки фіксована — це великий плюс в наш час.',
-    date: 'Березень 2025',
-    avatar: 'Т',
-  },
-];
-
-const Stars = ({ count }: { count: number }) => (
-  <Box className="flex gap-[2px]">
-    {Array.from({ length: 5 }).map((_, i) => (
-      <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="none">
-        <path
-          d="M7 1L8.545 4.9L12.5 5.27L9.7 7.82L10.545 11.73L7 9.5L3.455 11.73L4.3 7.82L1.5 5.27L5.455 4.9L7 1Z"
-          fill={i < count ? '#FFDC00' : '#ffffff20'}
-        />
-      </svg>
-    ))}
-  </Box>
-);
+import { reviews, stats } from '../../helpers';
+import { Stars } from '../Stars/Stars';
 
 const reviewsSchema = {
   "@context": "https://schema.org",
@@ -84,7 +36,7 @@ export const Reviews = () => {
         component="section"
         aria-label="Відгуки клієнтів та статистика Укртелеком"
         className="max-w-[1170px] mx-auto px-4 mt-[80px] mb-[80px]"
-        id="reviews-sevtion"
+        id="reviews-section"
       >
         {/* Лічильники */}
         <Box className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-[80px]">

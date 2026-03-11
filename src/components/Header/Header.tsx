@@ -1,4 +1,5 @@
 import { Box, useMediaQuery, useTheme } from '@mui/material';
+import { Logo } from '../Logo/Logo';
 
 export const Header = () => {
   const theme = useTheme();
@@ -20,13 +21,8 @@ export const Header = () => {
       component="header"
       className="flex items-center justify-between pt-[28px] pb-[10px]"
     >
-      <img
-        src="/images/logo.svg"
-        alt="Укртелеком — оптичний інтернет провайдер"
-        className="h-[40px] w-auto"
-        width="160"
-        height="40"
-      />
+
+      <Logo/>
 
       {!isMob && (
         <Box className="flex items-center gap-[32px]">
@@ -44,7 +40,7 @@ export const Header = () => {
       )}
 
       <a
-        href="tel:+380800506800"
+        href={process.env.REACT_APP_PHONE}
         className="flex items-center gap-[10px] no-underline group"
         aria-label="Зателефонувати до Укртелеком"
       >
@@ -63,10 +59,7 @@ export const Header = () => {
         </Box>
         <Box className="flex flex-col">
           <span className="text-[#00B3DC] text-[16px] font-semibold leading-tight group-hover:text-white transition-colors duration-200">
-            0 800 506 800
-          </span>
-          <span className="text-white/40 text-[10px] font-normal leading-tight">
-            безкоштовно
+            {process.env.REACT_APP_PHONE}
           </span>
         </Box>
       </a>

@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 export interface Offer {
   service: string;
   isMash: boolean;
@@ -19,3 +21,13 @@ export type ValidationErrors<T> = {
 };
 
 export type DefaultValidationErrors = { [key: string]: string };
+
+export interface Tariff {
+  id: number;
+  name: string;
+  img: string;
+  price: string;
+  description: string[];
+  modalElement: ReactElement;
+  extraPrice?: string;
+}

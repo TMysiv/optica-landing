@@ -568,7 +568,7 @@ export const Form = () => {
             умов Закону України «Про захист персональних даних» **
           </p>
           <CustomButton
-            text="ПІДКЛЮЧИТИСЬ"
+            text="ПІДКЛЮЧИТИ"
             width={247}
             className="bg-cyan-500 text-white hover:bg-yellow-850 hover:text-black text-xl mt-5"
             iconClassName="group-hover:text-yellow-850"

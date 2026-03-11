@@ -133,14 +133,14 @@ export const Equipments = () => {
           </button>
         </article>
 
-        <img
-          className="equipment-cable-img absolute right-[-438px] top-[165px]"
-          alt="Оптичне обладнання GPON для підключення інтернету Укртелеком"
-          src="/images/equipment.webp"
-          loading="lazy"
-          width="1064"
-          height="548"
-        />
+        {/*<img*/}
+        {/*  className="equipment-cable-img absolute right-[-438px] top-[165px]"*/}
+        {/*  alt="Оптичне обладнання GPON для підключення інтернету Укртелеком"*/}
+        {/*  src="/images/equipment.webp"*/}
+        {/*  loading="lazy"*/}
+        {/*  width="1064"*/}
+        {/*  height="548"*/}
+        {/*/>*/}
 
         <Box
           className="equipment-description max-w-[500px] text-white text-[24px] font-medium leading-[112%] absolute left-[458px] top-[87px]"

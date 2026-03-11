@@ -1,4 +1,8 @@
 import { Box, useMediaQuery, useTheme } from '@mui/material';
+import { Logo } from '../Logo/Logo';
+import { navItems, socials } from '../../helpers';
+import { SocialLink } from '../SocialLink/SocialLink';
+import { EmailLink } from '../EmailLink/EmailLink';
 
 export const Footer = () => {
   const theme = useTheme();
@@ -22,20 +26,13 @@ export const Footer = () => {
           /* ===== МОБІЛЬНА ВЕРСІЯ ===== */
           <Box className="flex flex-col gap-0">
 
-            {/* Лого */}
             <Box className="flex justify-center mb-[28px]">
-              <img
-                src="/images/logo.svg"
-                alt="Укртелеком — оптичний інтернет провайдер"
-                className="h-[36px] w-auto"
-                width="140"
-                height="36"
-              />
+              <Logo/>
             </Box>
 
             {/* Телефон — головний акцент на мобільному */}
             <a
-              href="tel:+380800506800"
+              href={process.env.REACT_APP_PHONE}
               className="no-underline flex flex-col items-center mb-[28px]"
               aria-label="Безкоштовний номер Укртелеком"
             >
@@ -47,20 +44,14 @@ export const Footer = () => {
                 }}
               >
                 <span className="text-[#00B3DC] text-[26px] font-bold tracking-wide">
-                  0 800 506 800
+                  {process.env.REACT_APP_PHONE}
                 </span>
-                <span className="text-white/50 text-[12px]">Безкоштовно по Україні</span>
               </Box>
             </a>
 
             {/* Навігація — горизонтальна сітка 2x2 */}
             <Box className="grid grid-cols-2 gap-[8px] mb-[28px]">
-              {[
-                { label: 'Тарифи', id: 'tariffs-section' },
-                { label: 'Обладнання', id: 'equipment-section' },
-                { label: 'Відгуки', id: 'reviews-section' },
-                { label: 'Підключитись', id: 'form-section' },
-              ].map((item) => (
+              {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollTo(item.id)}
@@ -77,31 +68,14 @@ export const Footer = () => {
 
             {/* Соцмережі — горизонтально */}
             <Box className="flex justify-center gap-[16px] mb-[24px]">
-              {[
-                { label: 'Telegram', href: 'https://t.me/ukrtelecom' },
-                { label: 'Facebook', href: 'https://www.facebook.com/ukrtelecom' },
-                { label: 'Instagram', href: 'https://www.instagram.com/ukrtelecom' },
-              ].map((s) => (
-                <a
-                  key={s.href}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/50 text-[13px] no-underline"
-                >
-                  {s.label}
-                </a>
+              {socials.map(({ label, href }) => (
+                <SocialLink key={href} label={label} href={href} className="text-white/50 text-[13px]" />
               ))}
             </Box>
 
             {/* Email */}
             <Box className="flex justify-center">
-              <a
-                href="mailto:info@ukrtelecom.ua"
-                className="text-white/40 text-[13px] no-underline"
-              >
-                info@ukrtelecom.ua
-              </a>
+              <EmailLink className="text-white/40 text-[13px]" email={`${process.env.REACT_APP_EMAIL}`}/>
             </Box>
 
           </Box>
@@ -111,13 +85,9 @@ export const Footer = () => {
 
             {/* Лого і опис */}
             <Box className="max-w-[280px]">
-              <img
-                src="/images/logo.svg"
-                alt="Укртелеком — оптичний інтернет провайдер"
-                className="h-[36px] w-auto mb-[16px]"
-                width="140"
-                height="36"
-              />
+
+              <Logo/>
+
               <p className="text-white/50 text-[13px] leading-[1.6] m-0">
                 Підключення оптичного інтернету GPON по всій Україні. Швидкість до 1 Гбіт/с. Енергонезалежна мережа до 96 годин.
               </p>
@@ -129,12 +99,7 @@ export const Footer = () => {
                 Навігація
               </p>
               <Box className="flex flex-col gap-[10px]">
-                {[
-                  { label: 'Тарифи', id: 'tariffs-section' },
-                  { label: 'Обладнання', id: 'equipment-section' },
-                  { label: 'Підключитись', id: 'form-section' },
-                  { label: 'Відгуки', id: 'reviews-section' },
-                ].map((item) => (
+                {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollTo(item.id)}
@@ -153,21 +118,15 @@ export const Footer = () => {
               </p>
               <Box className="flex flex-col gap-[12px]">
                 <a
-                  href="tel:+380800506800"
+                  href={process.env.REACT_APP_PHONE}
                   className="flex items-center gap-[10px] no-underline group"
                   aria-label="Безкоштовний номер Укртелеком"
                 >
                   <span className="text-[#00B3DC] text-[20px] font-bold group-hover:text-white transition-colors duration-200">
-                    0 800 506 800
+                    {process.env.REACT_APP_PHONE}
                   </span>
                 </a>
-                <span className="text-white/40 text-[12px]">Безкоштовно по Україні</span>
-                <a
-                  href="mailto:info@ukrtelecom.ua"
-                  className="text-white/50 hover:text-white text-[13px] no-underline transition-colors duration-200"
-                >
-                  info@ukrtelecom.ua
-                </a>
+                <EmailLink className="text-white/40 text-[13px]" email={`${process.env.REACT_APP_EMAIL}`}/>
               </Box>
             </Box>
 
@@ -177,20 +136,8 @@ export const Footer = () => {
                 Соцмережі
               </p>
               <Box className="flex flex-col gap-[10px]">
-                {[
-                  { label: 'Telegram', href: 'https://t.me/ukrtelecom' },
-                  { label: 'Facebook', href: 'https://www.facebook.com/ukrtelecom' },
-                  { label: 'Instagram', href: 'https://www.instagram.com/ukrtelecom' },
-                ].map((s) => (
-                  <a
-                    key={s.href}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/60 hover:text-[#00B3DC] text-[14px] no-underline transition-colors duration-200"
-                  >
-                    {s.label}
-                  </a>
+                {socials.map(({label, href}) => (
+                  <SocialLink key={href} label={label} href={href} className="text-white/60 hover:text-[#00B3DC] text-[14px]" />
                 ))}
               </Box>
             </Box>
@@ -208,7 +155,7 @@ export const Footer = () => {
           Підключити оптичний інтернет GPON від Укртелеком по всій Україні
         </h2>
         <p className="text-white/25 text-[12px] leading-[1.7] m-0">
-          Укртелеком надає послуги підключення оптичного інтернету GPON зі швидкістю до 1 Гбіт/с у Києві, Харкові, Одесі, Дніпрі, Запоріжжі, Львові та інших містах України. Технологія GPON забезпечує стабільний інтернет з енергонезалежністю мережі до 96 годин — ваш інтернет працює навіть під час відключення електроенергії. Тарифи на оптичний інтернет від 99 грн/міс з фіксованою ціною на 2 роки. Залишити заявку на підключення інтернету онлайн або зателефонувати 0 800 506 800 (безкоштовно).
+          Укртелеком надає послуги підключення оптичного інтернету GPON зі швидкістю до 1 Гбіт/с у Києві, Харкові, Одесі, Дніпрі, Запоріжжі, Львові та інших містах України. Технологія GPON забезпечує стабільний інтернет з енергонезалежністю мережі до 96 годин — ваш інтернет працює навіть під час відключення електроенергії. Тарифи на оптичний інтернет від 99 грн/міс з фіксованою ціною на 2 роки. Залишити заявку на підключення інтернету онлайн.
         </p>
       </Box>
 
@@ -217,18 +164,10 @@ export const Footer = () => {
         className="py-[20px]"
         sx={{ borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(0,0,0,0.2)' }}
       >
-        <Box className="max-w-[1170px] mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-[8px]">
+        <Box className="max-w-[1170px] mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-[8px]">
           <span className="text-white/30 text-[12px]">
-            © {new Date().getFullYear()} АТ «Укртелеком». Всі права захищені.
+            © {new Date().getFullYear()} Офіційний представник АТ «Укртелеком».
           </span>
-          <Box className="flex gap-[20px]">
-            <a href="http://google.com" className="text-white/30 hover:text-white/60 text-[12px] no-underline transition-colors">
-              Публічна оферта
-            </a>
-            <a href="http://google.com" className="text-white/30 hover:text-white/60 text-[12px] no-underline transition-colors">
-              Політика конфіденційності
-            </a>
-          </Box>
         </Box>
       </Box>
     </Box>

@@ -1,20 +1,10 @@
 import { Box } from '@mui/material'
 import { TariffsCard } from './TariffsCard';
-import { ReactElement } from 'react';
 import { MarketingFTTx } from '../../descriptions/MarketingFTTx';
 import { OptimaDualOffer } from '../../descriptions/OptimaDualOffer';
 import { MaxDualOffer } from '../../descriptions/MaxDualOffer';
 import { config } from '../../config';
-
-interface Tariff {
-  id: number;
-  name: string;
-  img: string;
-  price: string;
-  description: string[];
-  modalElement: ReactElement;
-  extraPrice?: string;
-}
+import { Tariff } from '../../types';
 
 export const Tariffs = () => {
   const tariffs: Tariff[] = [
